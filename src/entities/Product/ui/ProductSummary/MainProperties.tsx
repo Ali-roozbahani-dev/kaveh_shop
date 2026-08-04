@@ -1,0 +1,24 @@
+import { FaCircle } from "react-icons/fa";
+import { ProductAttribute } from "../../types";
+
+interface Props{
+    attributes: ProductAttribute[]; 
+}
+export default function MainProperties({attributes}: Props){
+
+    const mainProperties = attributes.slice(0 , 5);
+
+    return (
+        <ul className="my-9">
+            {mainProperties.map((propertie)=>(
+
+            <li key={propertie.id} className="mb-3 text-[14px] lg:text-[15px]">
+                <FaCircle className="inline-block me-2 text-[5px] lg:text-[6px] text-theme-hover"/>
+                <span className="me-1 text-[13px] md:text-[14px] text-primary-text">{propertie.attribute.name} :</span>
+                <span className="text-[13px] md:text-[14px] font-semibold">{propertie.value}</span>
+            </li>          
+
+            ))}
+        </ul>
+    )
+}

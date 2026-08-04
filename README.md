@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏠 Home Appliances Store
 
-## Getting Started
+A modern **Home Appliances E-commerce** built with **Next.js**, currently under active development.
 
-First, run the development server:
+> **⚠️ Project Status:** This project is still under development and new features will be added continuously.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+* ✅ Feature-Based Architecture
+* ✅ Custom API integration for the Home page
+* ✅ Product search
+* ✅ Product listing pages
+* ✅ Product filtering
+* ✅ Product sorting
+* ✅ Infinite Scroll for loading products
+* ✅ Responsive pages are done
+
+---
+
+## 🛠️ Tech Stack
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+* React Query (TanStack Query)
+* Zustand
+* shadcn/ui
+
+---
+
+## 📂 Project Structure
+
+The project follows a **Feature-Based Architecture**, where each feature is organized into its own directory, making the codebase more scalable, maintainable, and easier to extend.
+
+Example:
+
+```text
+src/
+├── app/
+├── components/
+├── features/
+│   ├── Auth/
+│   ├── Cart/
+│   ├── Home/
+│   ├── Products-List/
+│   ├── Product-Details/
+│   ├── search/
+│   └── ...
+├── lib/
+├── entities/
+├── stores/
+└── types/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Implemented Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Home Page
+* Product Listing Page
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📌 Current Progress
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Implemented:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Feature-Based project architecture
+* Home page connected to a custom API
+* Product search
+* Product filtering
+* Product sorting
+* Infinite scrolling for products
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚧 Upcoming Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The following features are currently in progress:
+
+* Shopping Cart
+* Wishlist
+* User Authentication
+* User Profile
+* Checkout Process
+* Product Reviews
+* Order Management
+* Performance optimizations
+
+---
+
+## 📷 Preview
+
+Screenshots will be added soon.
+
+---
+
+## 📄 License
+
+This project is intended for learning and portfolio purposes.
+

@@ -28,7 +28,12 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/components/Features/Products_List/ProductsSection",
+    "src/components/Features/Products_List/utils",
+    "src/components/Features/Products_List/types",
+    "src/components/Features/Products_List/Filter",
+    "src/components/Features/Products_List/components"
   ],
   "exclude": ["node_modules"]
 }
