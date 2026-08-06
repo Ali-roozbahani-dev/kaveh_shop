@@ -27,6 +27,7 @@ export default async function ProductPage({ params }: PageProps) {
     name,
     slug: productSlug,
     variants,
+    reviews: reviews_summary
   } = product;
   const jsonLd = createProductJsonLd(product);
 
@@ -48,6 +49,7 @@ export default async function ProductPage({ params }: PageProps) {
           </div>
           <div className="w-full lg:w-1/2 xl:w-1/4 xl:flex-1">
             <ProductSummary
+              reviews_summary={reviews_summary}
               variants={variants}
               name={name}
               brand={brand}
@@ -65,6 +67,7 @@ export default async function ProductPage({ params }: PageProps) {
           description={description}
           attributes={attributes}
           variants={variants}
+          reviews_summary={reviews_summary}
         />
       </Main>
     </>

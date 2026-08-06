@@ -10,11 +10,11 @@ export default function MainProperties({attributes}: Props){
 
     return (
         <ul className="my-9">
-            {mainProperties.map((propertie)=>(
+            {mainProperties.map((propertie,i)=>(
 
-            <li key={propertie.id} className="mb-3 text-[14px] lg:text-[15px]">
+            <li key={i} className="mb-3 text-[14px] lg:text-[15px]">
                 <FaCircle className="inline-block me-2 text-[5px] lg:text-[6px] text-theme-hover"/>
-                <span className="me-1 text-[13px] md:text-[14px] text-primary-text">{propertie.attribute.name} :</span>
+                <span className="me-1 text-[13px] md:text-[14px] text-primary-text">{propertie.attribute} :</span>
                 <span className="text-[13px] md:text-[14px] font-semibold">{propertie.value}</span>
             </li>          
 

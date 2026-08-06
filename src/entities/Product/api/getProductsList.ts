@@ -15,8 +15,6 @@ export async function getProductsList(
     }
   });
 
-  console.log(`http://127.0.0.1:8000/api/products?${searchParams.toString()}`);
-
   const res = await fetch(
     `http://127.0.0.1:8000/api/products?${searchParams.toString()}`,
     {

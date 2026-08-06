@@ -5,17 +5,19 @@ import Reviews from "../Reviews/Reviews";
 import TabsHeader from "./TabsHeader";
 import ProductSpecifications from "@/components/Features/Product_Details/ProductTabs/ProductSpecifications";
 import ProductPurchase from "../ProductPurchase/ProductPurchase";
-import { ProductAttribute, ProductVariant } from "@/entities/Product/types";
+import { ProductAttribute, ProductVariant, ReviewsSummary } from "@/entities/Product/types";
 
 interface Props {
   variants: ProductVariant[];
   attributes: ProductAttribute[];
   description: string;
+  reviews_summary: ReviewsSummary;
 }
 export default function ProductTabs({
   description,
   attributes,
   variants,
+  reviews_summary
 }: Props) {
   const [activeTab, setActiveTab] = useState("Description");
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,15 +62,14 @@ export default function ProductTabs({
             className="py-3 px-2 lg:p-5 scroll-mt-[160px] lg:scroll-mt-[190px]"
           >
             <ProductSpecifications
-              attributes={attributes}
-              variants={variants}
+              attributes={attributes}              
             />
           </section>
           <section
             id="Reviews"
             className="py-3 px-2 lg:p-5 scroll-mt-[160px] lg:scroll-mt-[190px]"
           >
-            <Reviews />
+            <Reviews reviews_summary={reviews_summary}/>
           </section>
         </div>
 

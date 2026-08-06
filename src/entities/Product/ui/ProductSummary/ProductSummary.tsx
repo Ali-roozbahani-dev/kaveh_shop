@@ -2,11 +2,12 @@ import Colors from "./Colors";
 import Brand from "./Brand";
 import Rating from "./Rating";
 import MainProperties from "./MainProperties";
-import { ProductAttribute, ProductVariant, Brand as Tbrand } from "../../types";
+import { ProductAttribute, ProductVariant, ReviewsSummary, Brand as Tbrand } from "../../types";
 import AddToFavorite from "@/components/Features/Product_Details/AddToFavorite";
 import { ShareProduct } from "@/components/Features/Product_Details/ShareProduct";
 
 interface Props {
+  reviews_summary: ReviewsSummary;
   variants: ProductVariant[];
   name: string;
   brand: Tbrand;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 export default function ProductSummary({
+  reviews_summary,
   variants,
   name,
   brand,
@@ -24,14 +26,14 @@ export default function ProductSummary({
       <div className="mb-4 flex justify-end items-center xl:hidden">
         <div className="flex-center text-primary-text2">
           <AddToFavorite />
-          <ShareProduct title="name" />
+          <ShareProduct />
         </div>
       </div>
       <h1 className="font-semibold text-[16px] md:text-[17px] lg:text-[20px] lg:border-b lg:pb-5">
         {name}
       </h1>
       <Brand brand={brand} />
-      <Rating />
+      <Rating reviews_summary={reviews_summary}/>
       <MainProperties attributes={attributes} />
       <Colors variants={variants} />
     </div>

@@ -1,7 +1,7 @@
 import RatingBar from "./RatingBar";
 
 
-export default function RatingDistribution(){
+export default function RatingDistribution({counts}: {counts: {}}){
 
     return (
         <div className="w-max mx-auto ltr">

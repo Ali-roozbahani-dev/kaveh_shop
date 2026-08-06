@@ -5,10 +5,11 @@ import ReviewSummary from "./ReviewSummary/ReviewSummary";
 import ReviewToolbar from "./ReviewToolbar/ReviewToolbar";
 import ReviewList from "./ReviewList/ReviewList";
 import LoadMoreReviews from "./LoadMoreReviews";
+import { ReviewsSummary } from "@/entities/Product/types";
 
 
-export default function Reviews(){
-
+export default function Reviews({reviews_summary}: {reviews_summary: ReviewsSummary}){
+    
     return (
         <div>
             <div className={styles.tabTitle}>
@@ -19,7 +20,7 @@ export default function Reviews(){
 
             <div className="flex flex-wrap justify-center py-4">
                 <div className="w-full lg:w-1/2 mb-4 lg:mb-0">
-                    <ReviewSummary />
+                    <ReviewSummary reviews_summary={reviews_summary}/>
                 </div>
 
                 <div className="lg:order-first w-full lg:w-1/2">

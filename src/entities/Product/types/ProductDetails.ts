@@ -13,6 +13,7 @@ export interface ProductDetails {
   images: ProductImage[];
   attributes: ProductAttribute[];
   variants: ProductVariant[];
+  reviews: ReviewsSummary;
 }
 
 export interface ProductImage {
@@ -23,16 +24,11 @@ export interface ProductImage {
 }
 
 export interface ProductAttribute {
-  id: number;
-  attribute: Attribute;
+  attribute: string;
   value: string;
+  properties: Record<string, unknown>;
 }
 
-export interface Attribute {
-  id: number;
-  name: string;
-  description: string;
-}
 
 export interface ProductVariant {
   id: number;
@@ -46,8 +42,17 @@ export interface ProductVariant {
   attributes: VariantAttribute[];
 }
 
-export interface VariantAttribute {
+interface VariantAttribute {
   id: number;
-  attribute: Attribute;
-  value: string;
+  attribute_value: {
+    attribute: string;
+    value: string;
+    properties: Record<string, unknown>;
+  };
+}
+
+export interface ReviewsSummary {
+  average_rate: number,
+  total_count: number,
+  counts: {}
 }

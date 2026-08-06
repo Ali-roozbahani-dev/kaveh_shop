@@ -15,8 +15,12 @@ export default function Colors({variants}: {variants: ProductVariant[]}){
 
 
             <div className="flex mt-3 px-1">
-                <ColorItem hash="#56c785"/>
-                <ColorItem hash="#f6e366"/>
+                {variants.map((variant)=>(                    
+                    <ColorItem 
+                    key={variant.id}
+                    variant={variant}
+                    />                
+                ))}
             </div>
 
 

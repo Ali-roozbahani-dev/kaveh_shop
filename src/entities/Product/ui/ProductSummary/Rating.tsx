@@ -1,19 +1,19 @@
-import Stars from "./Stars";
+import { Star } from "lucide-react";
+import { ReviewsSummary } from "../../types";
 
 
 
-export default function Rating(){
+
+export default function Rating({reviews_summary}: {reviews_summary: ReviewsSummary}){
+    const {average_rate, total_count} = reviews_summary;
 
     return (
-        <div className="w-max flex items-center">
-            <span className="text-[15px] md:text-[16px] self-end">{"4.6"}</span>
-            <div className="mx-2">
-                <Stars className=""/> 
+        <div className="w-max flex items-start">
+            <div>
+                <Star className="size-4.5 mx-px fill-golden-star text-golden-star"/> 
             </div>
-            <div className="text-primary-text2 text-[13px] md:text-[14px] self-end">
-                <span className="pe-px">({"129"})</span>
-                <span>دیدگاه</span>
-            </div>          
+            <span className="text-[14px] md:text-[15px] ms-2 me-1">{average_rate}</span>
+            <span className="text-[14px] md:text-[15px] text-primary-text">(امتیاز {total_count} نفر)</span>          
         </div>
     )
 }

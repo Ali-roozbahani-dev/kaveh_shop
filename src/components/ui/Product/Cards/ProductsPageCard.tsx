@@ -1,18 +1,18 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardFooter, CardTitle } from "@/components/ui/card";
-import { Tproduct } from "@/entities/Product/types";
+import { Card , CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import FooterWithDiscount from "./FooterWithDiscount";
 import FooterWithoutDiscount from "./FooterWithoutDiscount";
 import NoStock from "./NoStock";
+import { ProductListItem } from "@/entities/Product/types";
 
-export default function ProductsPageCard({ product }: { product: Tproduct }) {
+export default function ProductsPageCard({ product }: { product: ProductListItem }) {
   const { name, image, price, discount_amount, has_stock } = product;
 
   return (
-    <Link href={`/product/${product.slug}`} target="_blank" className="block">
-      <Card className="relative mx-auto w-full pt-0 border rounded-lg">
+    <Link href={`/product/${product.slug}`} target="_blank" className="block hover:shadow-[0px_0px_5px_1px_#e3e2e2]">
+      <Card className="relative mx-auto w-full pt-0 border">
         {discount_amount != 0 && (
           <Badge className="absolute bg-[#ee2e2e] top-2 py-3 right-2 rounded-sm">
             {"15"}% تخفیف

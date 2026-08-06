@@ -9,33 +9,24 @@ import { ProductAttribute, ProductVariant } from "../../types";
 import { useProductStore } from "@/stores/product_store";
 
 interface Props{
-  variants: ProductVariant[];
   attributes: ProductAttribute[];  
 }
 
-export default function SpecificationsTable({attributes , variants}: Props) {
-  const selectedId = useProductStore((state) => state.selectedVariantId);
-  const selectedVariant = variants.find((variant)=> variant.id === selectedId);
-
-  if(!selectedVariant) return null; 
-
-  const productAttributes = selectedVariant.attributes.length ?
-  selectedVariant.attributes :
-  attributes
-
+export default function SpecificationsTable({attributes}: Props) {
+  
 
   return (
     <div className="overflow-hidden bg-background mt-4">
       <Table>
         <TableBody>
-          {productAttributes.map((attribute) => (
+          {attributes.map((attribute,i) => (
             <TableRow
-              key={attribute.attribute.name}
+              key={i}
               className="border-0"
             >
               <TableCell className="w-1/3 bg-muted/40 px-0.75 py-0.75 font-medium text-foreground">
               <div className="bg-[#e4f1fc] py-3 px-4">
-                {attribute.attribute.name}
+                {attribute.attribute}
               </div>
                 
               </TableCell>

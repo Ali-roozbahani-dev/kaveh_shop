@@ -4,11 +4,10 @@ import SpecificationsTable from "../../../../entities/Product/ui/SpecificationsT
 import { ProductAttribute, ProductVariant } from "@/entities/Product/types";
 
 interface Props{
-  variants: ProductVariant[];
   attributes: ProductAttribute[];  
 }
 
-export default function ProductSpecifications({attributes , variants}: Props) {
+export default function ProductSpecifications({attributes}: Props) {
 
 
   return (
@@ -19,8 +18,7 @@ export default function ProductSpecifications({attributes , variants}: Props) {
       </div>
 
       <SpecificationsTable 
-      attributes={attributes}
-      variants={variants}
+      attributes={attributes}      
       />
     </div>
   );
