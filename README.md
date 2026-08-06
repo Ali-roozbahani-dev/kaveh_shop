@@ -15,6 +15,7 @@ A modern **Home Appliances E-commerce** built with **Next.js**, currently under 
 * ✅ Product filtering
 * ✅ Product sorting
 * ✅ Infinite Scroll for loading products
+* ✅ Virtualized product list for improved performance when rendering large datasets
 * ✅ Responsive pages are done
 
 ---
@@ -26,6 +27,7 @@ A modern **Home Appliances E-commerce** built with **Next.js**, currently under 
 * TypeScript
 * Tailwind CSS
 * React Query (TanStack Query)
+* TanStack Virtual
 * Zustand
 * shadcn/ui
 
