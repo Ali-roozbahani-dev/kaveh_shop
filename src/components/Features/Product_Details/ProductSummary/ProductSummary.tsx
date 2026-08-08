@@ -2,7 +2,12 @@ import Colors from "./Colors";
 import Brand from "./Brand";
 import Rating from "./Rating";
 import MainProperties from "./MainProperties";
-import { ProductAttribute, ProductVariant, ReviewsSummary, Brand as Tbrand } from "../../types";
+import {
+  ProductAttribute,
+  ProductVariant,
+  ReviewsSummary,
+  Brand as Tbrand,
+} from "../../../../entities/Product/types";
 import AddToFavorite from "@/components/Features/Product_Details/AddToFavorite";
 import { ShareProduct } from "@/components/Features/Product_Details/ShareProduct";
 
@@ -33,7 +38,7 @@ export default function ProductSummary({
         {name}
       </h1>
       <Brand brand={brand} />
-      <Rating reviews_summary={reviews_summary}/>
+      <Rating reviews_summary={reviews_summary} />
       <MainProperties attributes={attributes} />
       <Colors variants={variants} />
     </div>

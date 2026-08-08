@@ -9,8 +9,7 @@ import { RxHome } from "react-icons/rx";
 
 export default function NotFound() {
   return (
-    <>
-    <Header />
+    <>    
     <Main>
       <div className="max-w-md text-center mx-auto">
 
@@ -40,8 +39,7 @@ export default function NotFound() {
         </Link>
 
       </div>  
-    </Main>
-    <Footer />
+    </Main>    
     </>
   );
 }

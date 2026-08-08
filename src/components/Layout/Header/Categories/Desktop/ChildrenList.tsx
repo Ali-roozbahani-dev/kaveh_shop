@@ -12,16 +12,21 @@ export default function ChildrenList({ activeChildren, category }: Tprops) {
     if (item.path.length !== category.path.length + 1) return false;
 
     return category.path.every(
-      (segment, index) => segment === item.path[index],
+      (segment, index) => segment.slug === item.path[index].slug,
     );
   });
+
+  console.log(thirdLevel)
 
   return (
     <ul className="mb-5 h-max">
       <li>
         <Link
           target="blank"
-          href={`/category/${[...category.path].reverse().join("/")}`}
+          href={`/category/${category.path
+          .map((item) => item.slug)
+          .reverse()
+          .join("/")}`}
           className="block px-1 py-2 text-black
                 hover:bg-[#e8e8e8] w-full hover:text-theme"
         >
@@ -33,7 +38,10 @@ export default function ChildrenList({ activeChildren, category }: Tprops) {
         <li key={cat.id} className="w-full">
           <Link
             target="blank"
-            href={`/category/${[...cat.path].reverse().join("/")}`}
+            href={`/category/${cat.path
+            .map((item)=> item.slug)
+            .reverse()
+            .join("/")}`}
             className="block px-2 py-2 text-[14px]
                      text-primary-text hover:bg-[#e8e8e8] w-full hover:text-theme"
           >

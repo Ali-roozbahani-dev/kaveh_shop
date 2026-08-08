@@ -71,17 +71,12 @@ export default function ProductsSection({
     throw error;
   }
 
+  
   const products = data.pages.flatMap((page) => page.results);
   const facets = data.pages[0].facets;
 
 
-
-  const testProducts = Array.from({ length: 5000 }, (_, index) => ({
-    ...products[0],
-    slug: `test-product-${index}`,
-    name: `Product ${index}`,
-  }));
-
+  
   return (
     <div className="flex w-full relative">
       <FilterForm
@@ -102,7 +97,7 @@ export default function ProductsSection({
             setShowFilter={setShowFilter}
           />
 
-          <ProductsList products={testProducts} />
+          <ProductsList products={products} />
           <div ref={sentinel} className="h-2 w-full"></div>
         </div>
       </div>

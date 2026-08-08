@@ -16,15 +16,15 @@ import { notFound } from "next/navigation";
 
 type PageProps = {
   params: Promise<{
-    slug: string[];
+    slugs: string[];
   }>;
 };
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const category = decodeURIComponent(slug[slug.length - 1]);
+  const { slugs } = await params;
+  const category = decodeURIComponent(slugs[slugs.length - 1]);
 
   return {
     title: `${category} | کاوه شاپ`,
@@ -44,11 +44,13 @@ export async function generateMetadata({
 }
 
 export default async function ProductListPage({ params }: PageProps) {
-  const { slug } = await params;
-  if (!slug.length) notFound();
-  const decodedSlug = decodeURIComponent([...slug].reverse()[slug.length - 1]);
+  const { slugs } = await params;
+    
+  const decodedSlug = decodeURIComponent([...slugs].reverse()[slugs.length - 1]);
 
   const category = await getSingleCategory(decodedSlug);
+
+  if(!category) notFound();
 
   const initialQueries: Omit<Tqueries, "page"> = {
     category: category.slug,

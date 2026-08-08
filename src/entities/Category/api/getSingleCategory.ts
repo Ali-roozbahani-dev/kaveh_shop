@@ -2,12 +2,14 @@ import { CategoryListItem } from "../types/Category";
 
 export const getSingleCategory = async (
   slug: string,
-): Promise<CategoryListItem> => {
+): Promise<CategoryListItem | null> => {
   const res = await fetch(`http://127.0.0.1:8000/api/categories/${slug}`, {
     next: {
       revalidate: 3600,
     },
   });
+  
+  if(res.status === 404) return null;
 
   if (!res.ok) {
     throw new Error("خطایی رخ داد.");

@@ -42,13 +42,12 @@ export interface ProductVariant {
   attributes: VariantAttribute[];
 }
 
-interface VariantAttribute {
+export interface VariantAttribute {
   id: number;
-  attribute_value: {
-    attribute: string;
-    value: string;
-    properties: Record<string, unknown>;
-  };
+  attribute: string;
+  value: string;
+  properties: Record<string, unknown>;
+  
 }
 
 export interface ReviewsSummary {

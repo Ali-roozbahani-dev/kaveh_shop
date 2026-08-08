@@ -7,9 +7,10 @@ import { useState } from "react";
 export default function ParentsList({parents , children}: TCategoriesGroup){
     const [activeParent , setActiveParent] = useState(parents[2]);
 
-    const activeChildren = children.filter((child)=> (
-        child.path.includes(activeParent.slug)
-    ));
+
+    const activeChildren = children.filter((child) =>
+        child.path.some((item) => item.slug === activeParent.slug)
+    );
 
 
     return (        

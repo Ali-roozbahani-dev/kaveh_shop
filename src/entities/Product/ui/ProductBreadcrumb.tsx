@@ -6,36 +6,44 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { CategoryPath, SingleCategory} from "@/entities/Category/types/Category";
+import { CategoryPath} from "@/entities/Category/types/Category";
+import React from "react";
 
 
 interface Props { 
-  path: CategoryPath[];
-  productSlug: string;
+  name: string;
+  path: CategoryPath[]; 
 
 }
 
-export default function ProductBreadcrumb({path , productSlug}: Props) {
+export default function ProductBreadcrumb({name , path}: Props) {
   return (
-    <div>      
+    <div
+      className="w-full overflow-x-auto scrollbar-none"
+      style={{
+        WebkitOverflowScrolling: "touch",
+        touchAction: "pan-x",
+        overscrollBehaviorX: "contain",
+      }}
+    >      
       <Breadcrumb>
-        <BreadcrumbList>
+        <BreadcrumbList className="flex-nowrap whitespace-nowrap text-[12px] md:text-[13px]">
           <BreadcrumbItem>
-            <BreadcrumbLink href="/" className="text-[13px] lg:text-[14px]">خانه</BreadcrumbLink>
+            <BreadcrumbLink href="/">خانه</BreadcrumbLink>
           </BreadcrumbItem>
           
-            
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#" className="text-[13px] lg:text-[14px]">{"slug"}</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            {path.map((item , i)=>(
+              <React.Fragment key={i}>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={`/category/${item.slug}`}>{item.name}</BreadcrumbLink>
+                </BreadcrumbItem>                
+              </React.Fragment>
+            ))}
                        
-          
-          <BreadcrumbItem>
-            
-            <BreadcrumbPage className="text-[13px] lg:text-[14px]">{"initialCategory.name"}</BreadcrumbPage>
-            
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>            
+            <BreadcrumbPage>{name}</BreadcrumbPage>            
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

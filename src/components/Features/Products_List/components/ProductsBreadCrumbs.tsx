@@ -14,6 +14,7 @@ interface Tprops {
 }
 
 export default function ProductsBreadCrumbs({ initialCategory }: Tprops) {
+  const {path}= initialCategory;
   return (
     <div>
       <h1 className="font-bold text-[20px] mb-2">{initialCategory.name}</h1>
@@ -24,23 +25,22 @@ export default function ProductsBreadCrumbs({ initialCategory }: Tprops) {
               خانه
             </BreadcrumbLink>
           </BreadcrumbItem>
-          {initialCategory.path.map((slug) => (
-            <React.Fragment key={slug}>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="#" className="text-[13px] lg:text-[14px]">
-                  {slug}
-                </BreadcrumbLink>
-              </BreadcrumbItem>
+          {initialCategory.path.map((item , i) => (            
+            <React.Fragment key={item.slug}>
               <BreadcrumbSeparator />
+              <BreadcrumbItem>
+              {initialCategory.path.length === i + 1 ?
+                <BreadcrumbPage className="text-[13px] lg:text-[14px]">
+                  {item.name}
+                </BreadcrumbPage>
+                :
+                <BreadcrumbLink href={`/category/${item.slug}`} className="text-[13px] lg:text-[14px]">
+                  {item.name}
+                </BreadcrumbLink>
+              }
+              </BreadcrumbItem>              
             </React.Fragment>
-          ))}
-          <BreadcrumbItem>
-            {initialCategory!! && (
-              <BreadcrumbPage className="text-[13px] lg:text-[14px]">
-                {initialCategory.name}
-              </BreadcrumbPage>
-            )}
-          </BreadcrumbItem>
+          ))}          
         </BreadcrumbList>
       </Breadcrumb>
     </div>

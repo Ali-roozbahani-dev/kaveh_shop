@@ -1,15 +1,13 @@
 import { ClipboardList } from "lucide-react";
 import styles from "../styles/ProductTabs.module.css";
-import SpecificationsTable from "../../../../entities/Product/ui/SpecificationsTable/SpecificationsTable";
+import SpecificationsTable from "../../../../entities/Product/ui/SpecificationsTable";
 import { ProductAttribute, ProductVariant } from "@/entities/Product/types";
 
-interface Props{
-  attributes: ProductAttribute[];  
+interface Props {
+  attributes: ProductAttribute[];
 }
 
-export default function ProductSpecifications({attributes}: Props) {
-
-
+export default function ProductSpecifications({ attributes }: Props) {
   return (
     <div>
       <div className={styles.tabTitle}>
@@ -17,9 +15,7 @@ export default function ProductSpecifications({attributes}: Props) {
         <h1>مشخصات محصول</h1>
       </div>
 
-      <SpecificationsTable 
-      attributes={attributes}      
-      />
+      <SpecificationsTable attributes={attributes} />
     </div>
   );
 }

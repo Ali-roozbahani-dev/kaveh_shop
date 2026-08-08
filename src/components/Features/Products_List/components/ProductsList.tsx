@@ -37,23 +37,21 @@ export default function ProductsList({ products }: Props) {
     count: rows.length,    
     estimateSize: () => 420,
     overscan: 5,
-    useAnimationFrameWithResizeObserver: true,
+    useFlushSync: false,
   });
   
 
   // محاسبه مجدد ارتفاع ردیف ها با تغییر تعداد ستون
   useEffect(() => {
-    queueMicrotask(()=>{
-      rowVirtualizer.measure();
-    })
-  }, [columns]);
+    rowVirtualizer.measure();
+  }, [columns,rowVirtualizer]);
 
   if (products.length === 0) {
     return <EmptyResult />;
   }
 
   return (
-    <div ref={parentRef}>
+    <div ref={parentRef} className="px-5">
       <div
         style={{
           height: rowVirtualizer.getTotalSize(),

@@ -1,8 +1,10 @@
+
+
 export interface CategoryListItem {
   id: number;
   name: string;
   slug: string;
-  path: string[];
+  path: CategoryPath[];
 }
 
 export interface CategoryPath {
