@@ -47,7 +47,7 @@ export default function ProductTabs({
 
   return (
     <div ref={containerRef} className="md:border-x relative">
-      <TabsHeader activeTab={activeTab} />
+      <TabsHeader reviews_summary={reviews_summary} activeTab={activeTab} />
 
       <div className="flex">
         <div className="w-full xl:px-2 xl:w-3/4">

@@ -14,14 +14,14 @@ interface Tprops {
 }
 
 export default function ProductsBreadCrumbs({ initialCategory }: Tprops) {
-  const {path}= initialCategory;
+  
   return (
     <div>
       <h1 className="font-bold text-[20px] mb-2">{initialCategory.name}</h1>
       <Breadcrumb>
-        <BreadcrumbList>
+        <BreadcrumbList className="text-[12px] md:text-[13px]">
           <BreadcrumbItem>
-            <BreadcrumbLink href="/" className="text-[13px] lg:text-[14px]">
+            <BreadcrumbLink href="/">
               خانه
             </BreadcrumbLink>
           </BreadcrumbItem>
@@ -30,11 +30,11 @@ export default function ProductsBreadCrumbs({ initialCategory }: Tprops) {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
               {initialCategory.path.length === i + 1 ?
-                <BreadcrumbPage className="text-[13px] lg:text-[14px]">
+                <BreadcrumbPage>
                   {item.name}
                 </BreadcrumbPage>
                 :
-                <BreadcrumbLink href={`/category/${item.slug}`} className="text-[13px] lg:text-[14px]">
+                <BreadcrumbLink href={`/category/${item.slug}`}>
                   {item.name}
                 </BreadcrumbLink>
               }

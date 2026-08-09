@@ -22,7 +22,7 @@ export default function RatingInput({disabled , value , onChange , error}: Props
             <p className="text-primary-text text-[14px] lg:text-[15px]">
                 امتیاز شما به این محصول چیست ؟
             </p>
-            <div className="flex justify-center mt-2.5 ltr">
+            <div className="flex justify-center mt-2.5">
                 {STARS.map((star)=>(
                     <button 
                     disabled={disabled}

@@ -16,17 +16,20 @@ interface Tprops {
 }
 
 export default function CategoryItem({ parent, children }: Tprops) {
-  const targetChildren = children.filter((child) => {
-    return child.path.includes(parent.path[0]);
-  });
+   const targetChildren1 = children.filter((child) =>
+    child.path.some((item) => item.slug === parent.path[0].slug)
+    &&
+    child.path.length === 2    
+  );
+  
 
-  return targetChildren.length !== 0 ? (
+  return targetChildren1.length !== 0 ? (
     <AccordionItem value={parent.slug}>
       <AccordionTrigger className="px-4">{parent.name}</AccordionTrigger>
 
       <AccordionContent>
         <div className="flex flex-col">
-          {targetChildren.map((child) => (
+          {targetChildren1.map((child) => (
             <SheetClose key={child.slug} asChild>
               <Link
                 target="blank"

@@ -14,9 +14,10 @@ export default function ReviewSummary({reviews_summary}: {reviews_summary: Revie
                 average_rate={average_rate}
                 />
             </div>
+            
 
             <div className="w-full">
-                <RatingDistribution counts={counts}/>
+                <RatingDistribution total_count={total_count} counts={counts}/>
             </div>
         </div>        
     )

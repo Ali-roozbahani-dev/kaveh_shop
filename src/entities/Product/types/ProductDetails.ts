@@ -51,7 +51,15 @@ export interface VariantAttribute {
 }
 
 export interface ReviewsSummary {
-  average_rate: number,
-  total_count: number,
-  counts: {}
+  average_rate: number;
+  total_count: number;
+  counts: DistributionCount;
+}
+
+export interface DistributionCount{
+  "1"?: number;
+  "2"?: number;
+  "3"?: number;
+  "4"?: number;
+  "5"?: number;  
 }

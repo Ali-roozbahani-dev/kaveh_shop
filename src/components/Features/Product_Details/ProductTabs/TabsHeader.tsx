@@ -1,4 +1,5 @@
 "use client"
+import { ReviewsSummary } from "@/entities/Product/types";
 import styles from "../styles/ProductTabs.module.css"
 
 const headerItems = [
@@ -7,7 +8,12 @@ const headerItems = [
   {id: "Reviews" , label: "دیدگاه کاربران"},
 ];
 
-export default function TabsHeader({activeTab}: {activeTab: string}){
+interface Props{
+    reviews_summary: ReviewsSummary;
+    activeTab: string;
+}
+
+export default function TabsHeader({reviews_summary , activeTab}: Props){
 
     const scrollToSection = (id: string) => {
         document.getElementById(id)?.scrollIntoView({
@@ -32,7 +38,7 @@ export default function TabsHeader({activeTab}: {activeTab: string}){
                 md:me-6 lg:me-8 cursor-pointer flex items-center`}>                    
                     <p>{item.label}</p>
                     {item.id === "Reviews" &&
-                    <span className="ms-1.5 text-[13px] lg:text-[14px]">({"129"})</span>
+                    <span className="ms-1.5 text-[13px] lg:text-[14px]">({reviews_summary.total_count})</span>
                     }
                 </li>
                 ))}

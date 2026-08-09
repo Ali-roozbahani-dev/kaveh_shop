@@ -11,7 +11,7 @@ export default function ProductsPageCard({ product }: { product: ProductListItem
   const { name, image, price, discount_amount, has_stock } = product;
 
   return (
-    <Link href={`/product/${product.slug}`} target="_blank" className="block hover:shadow-[0px_0px_5px_1px_#e3e2e2]">
+    <Link href={`/product/${product.slug}`} className="block hover:shadow-[0px_0px_5px_1px_#e3e2e2]">
       <Card className="relative mx-auto w-full pt-0 border">
         {discount_amount != 0 && (
           <Badge className="absolute bg-[#ee2e2e] top-2 py-3 right-2 rounded-sm">
