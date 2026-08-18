@@ -1,11 +1,11 @@
 "use client";
-import SearchHeader from "@/components/Features/Search/components/SearchHeader";
 import Logo from "../Logo";
 import LoginLink from "../LoginLink";
 import CartLink from "../CartLink";
 import { useEffect, useState } from "react";
 import MobileNavbar from "./MobileNavbar";
 import { TCategoriesGroup } from "../Categories/utils/categorizeCategories";
+import SearchHeader from "@/components/Features/Search/SearchHeader";
 
 export default function MobileHeader({
   categoriesGroup,

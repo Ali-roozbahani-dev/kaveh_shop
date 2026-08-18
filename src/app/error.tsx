@@ -14,7 +14,7 @@ export default function Error({
   return (
     <>    
     <Main>
-      <div className="max-w-md text-center mx-auto">
+      <div className="max-w-md text-center mx-auto mt-20">
         <Image
           src="/error.png"
           alt="Error"

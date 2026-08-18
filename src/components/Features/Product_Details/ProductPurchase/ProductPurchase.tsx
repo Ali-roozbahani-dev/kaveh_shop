@@ -8,15 +8,15 @@ import { ProductVariant } from "@/entities/Product/types";
 import { useProductStore } from "@/stores/product_store";
 
 
-interface Props{    
+interface Props{  
     PurchaseInTabs?: boolean;
     variants: ProductVariant[];
 }
 
 
 export default function ProductPurchase({PurchaseInTabs , variants}: Props){
-    const selectedId = useProductStore((state) => state.selectedVariantId);
-    const selectedVariant = variants.find((variant)=> variant.id === selectedId);
+    const selectedVariantId = useProductStore((state)=> state.selectedVariantId);
+    const selectedVariant = variants.find((variant)=> variant.id === selectedVariantId);
 
     if(!selectedVariant) return null;        
     
@@ -37,7 +37,9 @@ export default function ProductPurchase({PurchaseInTabs , variants}: Props){
                 <p className="text-[13px] lg:text-[14px] 2xl:text-[15px]">گارانتی اصالت و سلامت فیزیکی کالا</p>
             </div>
             <div className="order-1 xl:order-1">
-             <AddToCartBtn />
+             <AddToCartBtn                
+             selectedVariant={selectedVariant}
+             />
             </div>
 
             {!PurchaseInTabs && 

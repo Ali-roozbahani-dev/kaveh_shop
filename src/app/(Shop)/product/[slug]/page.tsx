@@ -19,6 +19,7 @@ export default async function ProductPage({ params }: PageProps) {
   const decodedSlug = decodeURIComponent(slug);
   const product = await getProduct(decodedSlug);
   const {
+    id,
     attributes,
     brand,
     category,
@@ -43,7 +44,7 @@ export default async function ProductPage({ params }: PageProps) {
       <Main className="lg:px-5 2xl:px-10">
         <ProductBreadcrumb name={name} path={category.path} />
 
-        <div className="flex flex-wrap md:mt-3.5">
+        <div className="flex flex-wrap md:mt-3.5 mb-5">
           <div className="w-full lg:w-1/2 xl:w-2/5">
             <ProductGallery images={images} />
           </div>
@@ -60,7 +61,9 @@ export default async function ProductPage({ params }: PageProps) {
             className="bg-white block w-full xl:w-1/4 xl:ms-auto border-t xl:border-0
               z-100 xl:z-auto fixed bottom-0 right-0 xl:relative"
           >
-            <ProductPurchase variants={variants} />
+            <ProductPurchase            
+            variants={variants} 
+            />
           </div>
         </div>
         <ProductTabs

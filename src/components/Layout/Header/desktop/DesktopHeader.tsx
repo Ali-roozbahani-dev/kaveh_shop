@@ -1,9 +1,9 @@
-import SearchHeader from "@/components/Features/Search/components/SearchHeader";
 import Logo from "../Logo";
 import LoginLink from "../LoginLink";
 import CartLink from "../CartLink";
 import DesktopNavbar from "./DesktopNavbar";
 import { TCategoriesGroup } from "../Categories/utils/categorizeCategories";
+import SearchHeader from "@/components/Features/Search/SearchHeader";
 
 export default function DesktopHeader({
   categoriesGroup,

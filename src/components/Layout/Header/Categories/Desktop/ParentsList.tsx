@@ -2,6 +2,8 @@ import Link from "next/link";
 import ChildrensCategory from "./ChildrensCategory";
 import { TCategoriesGroup } from "../utils/categorizeCategories";
 import { useState } from "react";
+import { ChevronLeft } from "lucide-react";
+import styles from "./desktopCategory.module.css"
 
 
 export default function ParentsList({parents , children}: TCategoriesGroup){
@@ -15,17 +17,18 @@ export default function ParentsList({parents , children}: TCategoriesGroup){
 
     return (        
         <div className="flex">
-            <div className="h-120 overflow-y-auto ltr">
-                <ul className="rtl">
+            <div className={`${styles.category_scroll} h-120 overflow-y-auto ltr`}>
+                <ul className="rtl pe-3 min-w-65">
                     {parents.map((parent)=>(
                         <li key={parent.id}>
                             <Link 
                             target="blank"
                             onMouseEnter={() => setActiveParent(parent)}
                             href={`/category/${parent.slug}`} 
-                            className="block w-50 px-3 py-4 text-[14px]
-                            text-black hover:bg-white hover:text-theme">
-                                <span>{parent.name}</span>
+                            className="group w-full flex justify-between items-center rounded-sm ps-3 
+                            pe-1 py-4 text-[14px] text-black hover:bg-theme-2 hover:font-semibold hover:text-white">
+                                <span className="text-[15px]">{parent.name}</span>
+                                <ChevronLeft strokeWidth={3} className="opacity-0 group-hover:opacity-100 size-5"/>
                             </Link>                        
                         </li>
                     ))}

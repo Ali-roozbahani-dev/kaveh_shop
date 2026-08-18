@@ -1,4 +1,4 @@
-import OtpForm from "@/components/Features/Auth/components/OtpForm";
+import OtpForm from "@/components/Features/Auth/Login/OtpForm";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,9 +15,9 @@ type PageProps = {
 };
 
 export default async function LoginWithOtpPge({searchParams}: PageProps){
-    // const {callbackUrl = "/" ,mobileNum} = await searchParams;
+    const {callbackUrl = "/" ,mobileNum} = await searchParams;
 
-    // if(!mobileNum) redirect(`/Auth/Login?callbackUrl=${callbackUrl}`);
+    if(!mobileNum) redirect(`/Auth/Login?callbackUrl=${callbackUrl}`);
 
     
 
@@ -41,7 +41,10 @@ export default async function LoginWithOtpPge({searchParams}: PageProps){
             <h1 className="font-bold text-[18px] text-center mt-5 mb-3">کد ارسال شده را وارد کنید</h1> 
             <p className="text-primary-text text-[13px] md:text-[14px] mb-10 text-center">کد 6 رقمی به شماره {"09306450800"} ارسال شد .</p>  
                      
-            <OtpForm />                        
+            <OtpForm 
+            mobile={mobileNum}
+            callbackUrl={callbackUrl}
+            />                        
           </div> 
         </div>
       </div>      

@@ -1,5 +1,6 @@
 import { CategoryListItem } from "@/entities/Category/types/Category";
-import { Tbrand, Tproduct } from "@/entities/Product/types";
+import { Brand, ProductListItem } from "@/entities/Product/types";
+
 
 interface PublicItems {
   title: string;
@@ -36,7 +37,7 @@ export interface CategorySlider extends PublicItems {
 }
 
 export interface BrandSlider extends PublicItems {
-  items: Tbrand[];
+  items: Brand[];
 }
 
 export interface GridBanner extends PublicItems {
@@ -44,7 +45,7 @@ export interface GridBanner extends PublicItems {
 }
 
 export interface DiscountProducts extends PublicItems {
-  items: Tproduct[];
+  items: ProductListItem[];
 }
 
 export interface HomeData {

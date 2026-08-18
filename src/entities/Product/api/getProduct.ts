@@ -6,7 +6,7 @@ export async function getProduct(slug: string): Promise<ProductDetails> {
     `${process.env.NEXT_PUBLIC_API_URL}/api/products/${slug}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 60,
       },
     }
   );

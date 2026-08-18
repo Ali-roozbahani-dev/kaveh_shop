@@ -4,10 +4,10 @@ import "swiper/css";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa6";
 import HomePageProductCard  from "@/components/ui/Product/Cards/HomePageProductCard";
-import { Tproduct } from "@/entities/Product/types";
+import { ProductListItem } from "@/entities/Product/types"
 
 
-export default function SpecialOffers({products}: {products: Tproduct[]}) {
+export default function SpecialOffers({products}: {products: ProductListItem[]}) {
 
   
   return (

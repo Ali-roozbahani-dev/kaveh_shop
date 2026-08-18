@@ -15,7 +15,8 @@
   --color-primary-text2: #989898;
   --color-primary-text3: #f1f1f1;
   --color-golden-star: #f5c21e;
-  --color-outline-input: #a9bcf1;   
+  --color-outline-input: #a9bcf1;  
+  --color-soft-text: rgb(63,64,100); 
   --font-heading: var(--font-sans);  
   --font-sans: var(--font-sans);  
   --color-sidebar-ring: var(--sidebar-ring);  

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MdChevronLeft } from "react-icons/md";
 import ChildrenList from "./ChildrenList";
 import { CategoryListItem } from "@/entities/Category/types/Category";
+import styles from "./desktopCategory.module.css"
 
 interface Tprops {
   activeParent: CategoryListItem;
@@ -15,7 +16,7 @@ export default function ChildrensCategory({
   if (activeChildren.length === 0) return null;
 
   return (
-    <div className="w-80 h-120 bg-white ltr overflow-y-auto p-2">
+    <div className={`${styles.category_scroll} w-80 h-120 bg-white ltr overflow-y-auto p-3`}>
       <div className="rtl">
         <Link
           target="blank"

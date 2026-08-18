@@ -25,7 +25,7 @@ export function useColumns(ref:  RefObject<HTMLDivElement | null>) {
     } else if (width >= 640) {
     setColumns(2);
     } else {
-    setColumns(2);
+    setColumns(1);
     }
     };
 

@@ -5,15 +5,14 @@ import {
   CardFooter,  
   CardTitle,
 } from "@/components/ui/card"
-import { Tproduct } from "@/entities/Product/types"
+import { ProductListItem } from "@/entities/Product/types"
 import { calculateDiscount } from "@/utils/calculateDiscount"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function HomePageProductCard({product}: {product: Tproduct}) {
+export default function HomePageProductCard({product}: {product: ProductListItem}) {
 
   const discountPercentage = calculateDiscount(product.price , product.discount_amount);
-
 
 
 

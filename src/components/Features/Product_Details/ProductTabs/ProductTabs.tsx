@@ -75,7 +75,10 @@ export default function ProductTabs({
 
         <div className="hidden xl:block w-1/4 py-5 pe-5 relative">
           <div className="sticky top-50 w-full">
-            <ProductPurchase variants={variants} PurchaseInTabs={true} />
+            <ProductPurchase             
+            variants={variants} 
+            PurchaseInTabs={true} 
+            />
           </div>
         </div>
       </div>

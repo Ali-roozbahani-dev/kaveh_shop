@@ -1,5 +1,4 @@
 import { CategoryListItem } from "@/entities/Category/types/Category";
-import { LineDotRightHorizontal, Minus } from "lucide-react";
 import Link from "next/link";
 
 interface Tprops {
@@ -27,11 +26,10 @@ export default function ChildrenList({ activeChildren, category }: Tprops) {
           .map((item) => item.slug)
           .reverse()
           .join("/")}`}
-          className="block px-1 py-2 text-black
-                hover:bg-[#e8e8e8] w-full hover:text-theme"
+          className="block px-2 py-2 text-black rounded-sm
+          hover:bg-theme-2 hover:font-semibold hover:text-white w-full"
         >
-          <Minus className="inline-block me-px size-3" />
-          <span className="font-bold text-[14px]">{category.name}</span>
+          <span className="font-bold text-[15px]">{category.name}</span>
         </Link>
       </li>
       {thirdLevel.map((cat) => (
@@ -42,10 +40,10 @@ export default function ChildrenList({ activeChildren, category }: Tprops) {
             .map((item)=> item.slug)
             .reverse()
             .join("/")}`}
-            className="block px-2 py-2 text-[14px]
-                     text-primary-text hover:bg-[#e8e8e8] w-full hover:text-theme"
+            className="block px-2 py-2 text-[14px] rounded-sm
+            text-primary-text hover:bg-theme-2 hover:font-semibold hover:text-white"
           >
-            - <span className="text-[13px]">{cat.name}</span>
+            <span className="text-[14px]">{cat.name}</span>
           </Link>
         </li>
       ))}
