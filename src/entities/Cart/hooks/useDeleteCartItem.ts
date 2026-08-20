@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Cart as Tcart } from "@/entities/Cart/types/Cart";
 import { cartQueryKey } from "../queryKeys";
-import { api } from "../axios_instance";
+import { api } from "../../../api/axios_instance";
 
 
 export function useDeleteCartItem(){

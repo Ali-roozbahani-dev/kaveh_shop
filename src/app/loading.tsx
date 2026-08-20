@@ -1,16 +1,18 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Dots } from "@/components/dots"
+import Image from "next/image"
+
 
 export default function Loading() {
   return (
-    <Card className="w-full max-w-xs">
-      <CardHeader>
-        <Skeleton className="h-4 w-2/3" />
-        <Skeleton className="h-4 w-1/2" />
-      </CardHeader>
-      <CardContent>
-        <Skeleton className="aspect-video w-full" />
-      </CardContent>
-    </Card>
+    <div className="h-screen flex flex-col items-center">
+      <Image 
+      src={"/loadingLogo.png"} 
+      alt="Logo"
+      width={907} 
+      height={1008}
+      className="w-40  h-auto mb-3 mt-55"
+      />
+      <Dots className="w-13 ltr "/>
+    </div>
   )
 }

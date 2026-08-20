@@ -1,25 +1,17 @@
-"use client"
 import { MessageCircle } from "lucide-react";
 import styles from "../styles/ProductTabs.module.css"
 import ReviewForm from "./ReviewForm/ReviewForm";
 import ReviewSummary from "./ReviewSummary/ReviewSummary";
-import ReviewToolbar from "./ReviewToolbar/ReviewToolbar";
-import ReviewList from "./ReviewList/ReviewList";
-import LoadMoreReviews from "./LoadMoreReviews";
 import { ReviewsSummary } from "@/entities/Product/types";
-import { useGetReviews } from "@/entities/Review/hooks/useGetReviews";
+import ReviewListSection from "./ReviewListSection/ReviewListSection";
 
+interface Props {
+    reviews_summary: ReviewsSummary; 
+    productSlug: string
+}
 
-export default function Reviews({reviews_summary}: {reviews_summary: ReviewsSummary}){
-    const {
-    data,
-    isPending,
-    isFetchingNextPage,
-    hasNextPage,
-    fetchNextPage,
-    } = useGetReviews();
+export default function Reviews({reviews_summary , productSlug}: Props){
 
-    const reviews = data?.pages.flatMap((page) => page.results) ?? [];
     
 return (
     <div>
@@ -38,15 +30,8 @@ return (
                 <ReviewForm />
             </div>
         </div>
-        <ReviewToolbar />
-        
-        {/* <ReviewList reviews={reviews}/>
 
-        <LoadMoreReviews 
-        fetchNextPage={fetchNextPage}
-        isFetchingNextPage={isFetchingNextPage}
-        hasNextPage={hasNextPage}
-        /> */}
+        <ReviewListSection productSlug={productSlug}/>
     </div>        
 )
 } 

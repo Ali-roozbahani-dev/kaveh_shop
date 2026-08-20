@@ -21,6 +21,7 @@ import FormBtns from "./FormBtns";
 import { SlidersHorizontal } from "lucide-react";
 import { Facets } from "@/entities/Product/types";
 import { usePathname } from "next/navigation";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 
 type Tprops = {
@@ -32,14 +33,16 @@ type Tprops = {
 export default function FilterContainer({facets,onSubmit}: Tprops){
     const pathname = usePathname();
     const firstSegment = pathname.split('/')[1];
+    const isMobile = useIsMobile();
     
         
 
     return (
         <Sidebar
         side="right"
-        variant="sidebar"      
-        className="w-80 border-l md:sticky h-full lg:border"
+        variant="sidebar"     
+        collapsible={isMobile ? "offcanvas" : "none"} 
+        className="w-80 border-l md:sticky h-full md:border"
         >
         
             <form

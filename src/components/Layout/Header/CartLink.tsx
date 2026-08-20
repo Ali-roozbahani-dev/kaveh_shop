@@ -7,10 +7,7 @@ import { FaCartShopping } from "react-icons/fa6";
 export default function CartLink() {
   const {data: cart , isPending , error} = useGetCart();
   
-  
-  console.log("error:", error);
-
-  
+    
   if(error) throw new Error("خطایی رخ داد");
 
 

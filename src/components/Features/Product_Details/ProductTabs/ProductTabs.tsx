@@ -12,12 +12,14 @@ interface Props {
   attributes: ProductAttribute[];
   description: string;
   reviews_summary: ReviewsSummary;
+  productSlug: string;
 }
 export default function ProductTabs({
   description,
   attributes,
   variants,
-  reviews_summary
+  reviews_summary,
+  productSlug
 }: Props) {
   const [activeTab, setActiveTab] = useState("Description");
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,7 +71,10 @@ export default function ProductTabs({
             id="Reviews"
             className="py-3 px-2 lg:p-5 scroll-mt-[160px] lg:scroll-mt-[190px]"
           >
-            <Reviews reviews_summary={reviews_summary}/>
+            <Reviews 
+            reviews_summary={reviews_summary}
+            productSlug={productSlug}
+            />
           </section>
         </div>
 

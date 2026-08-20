@@ -1,3 +1,4 @@
+import { api } from "@/api/axios_instance";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -12,11 +13,9 @@ export function useVerifyOtp({ phone_number , callbackUrl}: VerifyOtpParams) {
     const router = useRouter();
     
     const verifyOtpMutation = useMutation({
-        mutationFn: async (otp: string) => {
-            const API_URL = process.env.NEXT_PUBLIC_API_URL;
+        mutationFn: async (otp: string) => {        
 
-            await axios.post(
-                `${API_URL}/api/user/auth/verify-otp/`,
+            await api.post("/api/user/auth/verify-otp/",
                 {
                     phone_number,
                     otp,

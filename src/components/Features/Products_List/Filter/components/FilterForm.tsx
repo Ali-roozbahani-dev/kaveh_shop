@@ -41,14 +41,18 @@ export function FilterForm({
 
   return (
     <FormProvider {...methods}>
-      {showFilter && (
-        <div className="absolute md:sticky lg:top-34 lg:right-0 p-4 self-start lg:block">
-          <FilterContainer
-            facets={facets}
-            onSubmit={methods.handleSubmit(submitHandler)}
-          />
-        </div>
-      )}
+      <div
+        className={`
+          block
+          md:sticky md:top-34 md:right-0 md:p-4 md:self-start
+          ${showFilter ? "md:block" : "md:hidden"}
+        `}
+      >
+        <FilterContainer
+          facets={facets}
+          onSubmit={methods.handleSubmit(submitHandler)}
+        />
+      </div>
     </FormProvider>
   );
 }

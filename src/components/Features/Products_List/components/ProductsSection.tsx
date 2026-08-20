@@ -6,6 +6,8 @@ import { useProductList } from "../api/useProductList";
 import { FilterForm } from "@/components/Features/Products_List/Filter/components/FilterForm";
 import { FormOutput, Ordering } from "../types/TproductSection";
 import { CategoryListItem } from "@/entities/Category/types/Category";
+import { PulsatingDots } from "@/components/pulsating-dots";
+
 
 interface Tprops {
   initialBrand?: string;
@@ -98,7 +100,14 @@ export default function ProductsSection({
           />
 
           <ProductsList products={products} />
-          <div ref={sentinel} className="h-2 w-full"></div>
+          <div ref={sentinel} className="h-2 w-full">
+
+            {isFetchingNextPage &&
+            <div className="w-max mx-auto mt-5">
+              <PulsatingDots className="w-11 ltr"/>
+            </div>
+            }
+          </div>
         </div>
       </div>
     </div>

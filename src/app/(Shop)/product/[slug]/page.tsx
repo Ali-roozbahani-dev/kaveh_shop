@@ -71,6 +71,7 @@ export default async function ProductPage({ params }: PageProps) {
           attributes={attributes}
           variants={variants}
           reviews_summary={reviews_summary}
+          productSlug={productSlug}
         />
       </Main>
     </>

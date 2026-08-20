@@ -2,6 +2,7 @@ import { getAllCategories } from "@/entities/Category/api/getAllCategories";
 import DesktopHeader from "./desktop/DesktopHeader";
 import MobileHeader from "./mobile/MobileHeader";
 import { categorizeCategories } from "./Categories/utils/categorizeCategories";
+import DesktopNavbar from "./desktop/DesktopNavbar";
 
 export default async function Header() {
   const categories = await getAllCategories();
@@ -9,14 +10,19 @@ export default async function Header() {
 
 
   return (
-    <header className="mb-4 sticky top-0 z-49 bg-white border-b px-3 lg:px-7">
+    <>
+    <header className="sticky top-0 z-49 border-b border-[#ebebeb]  bg-white">      
       <div className="hidden lg:block">
-        <DesktopHeader categoriesGroup={categoriesGroup} />
+        <DesktopHeader />
       </div>
 
       <div className="lg:hidden">
         <MobileHeader categoriesGroup={categoriesGroup} />
-      </div>
+      </div>      
     </header>
+    <div className="sticky top-[100px] lg:top-[135px] mb-[65px] lg:mb-[58px] z-48">
+       <DesktopNavbar categoriesGroup={categoriesGroup} /> 
+    </div>
+    </>
   );
 }

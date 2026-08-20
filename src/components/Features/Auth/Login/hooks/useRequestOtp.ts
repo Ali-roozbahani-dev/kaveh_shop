@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useOtpCountdown } from "./useOtpCountdown";
+import { api } from "@/api/axios_instance";
 
 export function useRequestOtp(){
     const router = useRouter();
@@ -10,9 +11,8 @@ export function useRequestOtp(){
 
     const requestOtpMutation = useMutation({
         mutationFn: async ({mobile , callbackUrl}: {mobile: string; callbackUrl?: string})=>{        
-        const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-        await axios.post(`${API_URL}/api/user/auth/request-otp/`,{
+        
+        await api.post("/api/user/auth/request-otp/",{
             phone_number: mobile 
         }) 
 

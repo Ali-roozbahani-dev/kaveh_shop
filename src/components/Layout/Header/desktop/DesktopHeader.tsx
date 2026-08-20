@@ -1,18 +1,13 @@
 import Logo from "../Logo";
 import LoginLink from "../LoginLink";
 import CartLink from "../CartLink";
-import DesktopNavbar from "./DesktopNavbar";
 import { TCategoriesGroup } from "../Categories/utils/categorizeCategories";
 import SearchHeader from "@/components/Features/Search/SearchHeader";
 
-export default function DesktopHeader({
-  categoriesGroup,
-}: {
-  categoriesGroup: TCategoriesGroup;
-}) {
-  return (
-    <>
-      <div className="container-0 py-3">
+export default function DesktopHeader() {
+  return (    
+    <div className="px-3 lg:px-7">
+      <div className="container-0 py-3  bg-white">
         <div className="flex-between pt-2">
           <div className="flex items-center flex-1">
             <div className="w-35">
@@ -32,10 +27,7 @@ export default function DesktopHeader({
             </div>
           </div>
         </div>
-      </div>
-      <div className="relative">
-        <DesktopNavbar categoriesGroup={categoriesGroup} />
-      </div>
-    </>
+      </div>     
+    </div>  
   );
 }

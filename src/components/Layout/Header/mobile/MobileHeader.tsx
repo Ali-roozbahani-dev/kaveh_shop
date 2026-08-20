@@ -5,28 +5,18 @@ import CartLink from "../CartLink";
 import { useEffect, useState } from "react";
 import MobileNavbar from "./MobileNavbar";
 import { TCategoriesGroup } from "../Categories/utils/categorizeCategories";
-import SearchHeader from "@/components/Features/Search/SearchHeader";
+
 
 export default function MobileHeader({
   categoriesGroup,
 }: {
   categoriesGroup: TCategoriesGroup;
 }) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+ 
 
   return (
     <>
-      <div className="container-0 py-3">
+      <div className="container-0 py-3 px-2">
         <div className="flex-between">
           <div className="flex items-center">
             <div>
@@ -45,13 +35,8 @@ export default function MobileHeader({
           <div className="flex">
             <LoginLink />
           </div>
-        </div>
-
-        {!scrolled && (
-          <div className="w-full mt-3">
-            <SearchHeader />
-          </div>
-        )}
+        </div>              
+        
       </div>
     </>
   );

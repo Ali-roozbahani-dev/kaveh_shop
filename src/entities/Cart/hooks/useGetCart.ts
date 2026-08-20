@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Cart } from "../types/Cart";
 import { cartQueryKey } from "../queryKeys";
-import { api } from "../axios_instance";
+import { api } from "../../../api/axios_instance";
 
 
 async function fetchCart(): Promise<Cart> {

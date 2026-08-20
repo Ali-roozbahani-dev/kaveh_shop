@@ -59,7 +59,7 @@ export default function SearchHeader() {
 
   return (
     <div ref={containerRef} className="relative w-full">
-      <InputGroup className="py-5 lg:py-6 bg-[#f5f5f5]">
+      <InputGroup className="py-5 lg:py-6 px-2.5 rounded-full bg-[#f5f5f5]">
         <InputGroupInput 
         className="placeholder:text-[13px] lg:placeholder:text-[15px]"
         placeholder="جستوجو ..." 
